@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './ProjectCard.module.css'
+import React from 'react';
+import styles from './ProjectCard.module.css';
 
 export default function CoverImg(props) {
   return (
@@ -7,7 +7,7 @@ export default function CoverImg(props) {
       src={props.imgSrc}
       alt="cover image"
       className={props.isHovering ? styles.cover_img : styles.hidden_cover_img}
-      style={{left: props.position[0]+40, top: props.position[1]}}
-    />    
-  )
+      style={{ left: props.position[0] + 200, top: props.position[1] }}
+    />
+  );
 }

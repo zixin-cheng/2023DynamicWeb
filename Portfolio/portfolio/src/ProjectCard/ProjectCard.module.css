@@ -1,54 +1,81 @@
-/* Import Jua and Open Sans Font Families */
-@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Roboto+Mono&display=swap');
+@import '../styles/vars.css';
 
-body {
-    font-family: 'Roboto Mono', monospace;
-    background: rgb(185, 194, 196);
+.article_wrapper {
+  position: relative;
+  background-color: grey;
+  height: 300vh; /* Length of the interactive scroll article */
+  top: 0;
 }
 
-.content_wrapper{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    height: 90vh;
-    justify-content: center;
-    width: 100%;
+.canvas_wrapper {
+  position: sticky;
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  align-content: center;
+}
+
+.menu_wrapper {
+  /* position: sticky; */
+  z-index: 60;
+  top: 0.5rem;
+}
+
+.content_wrapper {
+  position: absolute;
+  z-index: 50;
+  top: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 90vh;
+  justify-content: center;
+}
+
+h1 {
+  position: absolute;
+  z-index: 50;
+  font-family: var(--ff-gloock);
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  color: var(--c-light-grey);
 }
 
 .card {
   display: flex;
-  display: block;
+  /* display: block; */
   flex-direction: row;
   justify-content: flex-start;
   padding: 0.5rem;
-  /* max-width: 80%; */
   border-radius: 5px;
-  /* background: rgb(242, 240, 237); */
-  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1); */
   margin: 1.5vh;
-  
+
   /* &:hover {
     transform: rotate(-5deg) scale(1);
   } */
 }
 
 .cover_img {
-  position: absolute;
+  position: fixed;
   transform: translateY(-50%) scale(1);
   width: auto;
   height: 30vh;
   opacity: 1;
-  transition: 0.2s; 
+  transition: 0.2s;
+  pointer-events: none;
 }
 
 .hidden_cover_img {
-  position: absolute;
-  transform: translateY(-30%) scale(0.8);
+  position: fixed;
+  transform: translateY(-40%) scale(0.95);
   width: auto;
   height: 30%;
   transition: 0.2s;
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
 }
 
 .project_info {
@@ -58,36 +85,29 @@ body {
 
 .project_title,
 .list_title {
-    font-family: 'Gloock', serif;
-    font-weight: 400;
-}
-
-h1{
-    font-family: 'Gloock', serif;
-    font-weight: 400;
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
-    /* color: rgb(242, 240, 237); */
+  font-family: var(--ff-gloock);
+  font-weight: 400;
 }
 
 .project_title {
   margin: 0;
   font-size: 6rem;
-  color: rgb(77, 89, 101);
+  color: var(--c-light-grey);
   transition: 0.2s;
 
-   &:hover {
-    color: rgb(0, 0, 0);
+  &:hover {
+    color: var(--c-magenta);
     transition: 0.2s;
   }
 }
 
-.list_title {
+/* .list_title {
   margin: 0.5rem 0;
   font-size: 1.625rem;
-  color: #48B2FF;
-}
+  color: #48b2ff;
+} */
 
-p{
+p {
   margin: 0;
+  color: var(--c-light-grey);
 }
